@@ -1,31 +1,92 @@
 # game-project
 
-# What is going to happen
+# Introduction
 
-I am planning to build a 'Snake' game.
+I am planning to build 'Snake'.
 
 This is a classic game where the user controls a snake around the screen, consuming food to grow longer.
 
-The objective of the game will be to eat / collect as much food as possible, while avoiding head-on collisions with the walls or the snakes own body. The challenge of the game increases as the snakes body grows longer, as it consumes more food, leaving less room to maneuver.
+The objective of the game will be to control a snake to eat as much food as possible to grow as long as possible, while avoiding head-on collision with the walls or its own body.
 
-The score will increase with every piece of food eaten / consumed. There will be a max score when the snake reaches its maximum length and no more food can be placed on the screen.
+The snake will start off as a single block and will grow in size by one block with each piece of food consumed. The food item will only be one block, and when consumed will spawn on a random place on the screen (not where the snake is).
 
-There will be 3 difficulty levels: easy, medium, hard. Each will be differentiated by the speed the snake moves on the screen.
+The challenge of the game increases as the snakes body grows longer, as it consumes more food, leaving less room to maneuver.
 
-# How I plan on building it
+The score will increase with every piece of food eaten. There will be a max score when the snake reaches the maximum length and no more food can be placed on the screen.
 
-# HTML/CSS
+# How I Plan On Building It
 
--[] A display of a fixed size for onscreen elements (snake & food)
--[] A set of buttons
--[] Direction buttons (up, down, left, right)
--[] Button to restart the game
+## HTML/CSS
 
--   -[] A score counter
-    -[] A drop down menu to select the difficulty before the game starts.
+-   [ ] A square display of a fixed size for onscreen elements (snake & food)
 
-# TypeScript Logic
+    -   [ ] The square display and elements need to grow in proportion when moving from mobile to desktop.
+    -   [ ] The display will have a grid as a background
 
-# List of features the game will include
+-   [ ] A set of buttons
 
-## In order of importance
+    -   [ ] On-screen Direction buttons (up, down, left, right)
+    -   [ ] Button to restart the game
+
+-   [ ] Random placement of the snake
+-   [ ] Random placement of the food
+-   [ ] A score counter that increases with every piece of food consumed
+-   [ ] A high score counter that remembers the high score from the session played
+-   [ ] Heading with the name 'SNAKE'
+
+## TypeScript Logic
+
+-   [ ] eventListeners will need to look out for clicks
+    -   [ ] Listens for clicks on the on-screen direction buttons => the snake should move in the direction of the button clicked
+    -   [ ] Listens for clicks for keyboard buttons
+    -   [ ] Listens for clicks on the restart button
+        -   [ ] Should restart the game, the snake should go back to its original size, and the snake and food should be placed in a random spot.
+        -   [ ] The game should start and restart in a static state.
+-   [ ] Function that handles the increase in size of the snakes body when it consumes food
+    -   [ ] Function that checks whether the food has been hit by the snake
+-   [ ] Function that updates the score when the food has been consumed
+-   [ ] Function that handles the change in direction
+-   [ ] Function that handles the repositioning of the food to another random position when it has been consumed.
+
+-   [ ] Possible error states
+    -   [ ] The snake should start off as static. Should only begin once the user has clicked a direction button
+    -   [ ] The snake and food should not start off on top of each other
+
+## List Of Features The Game Will Include
+
+In order of importance
+
+# Extra Tasks
+
+-   [ ] Sound effects
+-   [ ] Add difficulty levels: Easy, Medium, Hard. This will be correlated to the speed the snake moves on the screen.
+    -   [ ] A drop down menu to select the difficulty before the game starts.
+-   [ ] Add a different mode with no walls - the snake will be able to pass through a wall and exit the opposite side.
+-   [ ] Add special effects to make it unique/distinguishable from classic 'Snake'.
+    -   [ ] Feature 1?
+
+# MVP
+
+_Remove this section at the end of the project_
+
+-   [ ] Present a simple plan of the game to one of the coaches:
+
+    -   [x] What will happen in the game in plain english
+    -   [x] How you plan on building it (HTML/CSS/TS)
+    -   [ ] List of features the game will include in order of importance
+
+-   [ ] Version control
+
+    -   [x] Public repository on GitHub
+    -   [x] Have a README file with a short intro
+    -   [ ] Have at least 15 meaningful Git commits
+
+-   [ ] Readability
+
+    -   [ ] TS code to be formatted as functions
+    -   [ ] Code mush be correctly formatted using suitable indentation and variable names
+
+-   [ ] The Code
+    -   [ ] Must be all my own. Be able to explain what everything does and it's there
+    -   [ ] Click or keypress to trigger the events of the game (no refreshing to restart the game)
+    -   [ ] Mobile-first approach to the implementation. It needs to work on different device widths
