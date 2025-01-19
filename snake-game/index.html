@@ -6,27 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
   </head>
-  <body>
-    <section class="game-info">
-      <h1 class="game-name">Snake</h1>
-      <h6 class="game-creator">by Adil Ahmed</h6>
-      <div class="score">
-        <h4 class="score__current">Score:</h4>
-        <h4 class="score__high">High Score:</h4>
+  <body> <!--Tried to wrap the div in section but it didn't fill all the surrounding area-->
+    <div class="game-area">
+      <div class="title-area">
+        <h1>Snake</h1>
+        <h6>by Adil Ahmed</h6>
       </div>
-    </section>
-    <section class="display-info">
-    <div class="display__viewer"></div>
-    </section>
-    <section class="control-infor">
+      <div class="score-details"> <!--Top banner with details-->
+        <span class="score">Score: 0</span>
+        <span class="high-score">High score: 0</span>
+      </div>
+      <div class="play-board"></div>
       <div class="controls">
-        <button class="contols__up"></button>
-        <button class="controls__left"></button>
-        <button class="controls__down"></button>
-        <button class="controls__right"></button>
+        <i data-key="arrow-left" class="fa-solid fa-arrow-left-long"></i>
+        <i data-key="arrow-up" class="fa-solid fa-arrow-left-long"></i>
+        <i data-key="arrow-right" class="fa-solid fa-arrow-left-long"></i>
+        <i data-key="arrow-down" class="fa-solid fa-arrow-left-long"></i>
       </div>
-      <button class="resart-button">Restart</button>
-    </section>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
