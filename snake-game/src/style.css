@@ -33,7 +33,7 @@ body {
 .score-details {
   color: white;
   font-size: small;
-  padding: 20px 27px;
+  padding: 10px 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -44,4 +44,5 @@ body {
   background: darkblue;
   display: grid;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr); /* Will split the grid into an equal 30x30 grid */
+
 }
