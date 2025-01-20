@@ -18,21 +18,21 @@ The score will increase with every piece of food eaten. There will be a max scor
 
 ## HTML/CSS
 
--   [ ] A square display of a fixed size for onscreen elements (snake & food)
+-   [x] A square display of a fixed size for onscreen elements (snake & food)
 
     -   [ ] The square display and elements need to grow in proportion when moving from mobile to desktop.
-    -   [ ] The display will have a grid as a background
+    -   [ ] The display will have a grid as a background for the snake to move around. Will be visible.
 
 -   [ ] A set of buttons
 
-    -   [ ] On-screen Direction buttons (up, down, left, right)
+    -   [x] On-screen Direction buttons (up, down, left, right) in mobile mode (touch screens)
     -   [ ] Button to restart the game
 
 -   [ ] Random placement of the snake
 -   [ ] Random placement of the food
--   [ ] A score counter that increases with every piece of food consumed
--   [ ] A high score counter that remembers the high score from the session played
--   [ ] Heading with the name 'SNAKE'
+-   [x] A current score counter
+-   [x] A high score counter that remembers the high score from the session played
+-   [x] Heading with the name 'SNAKE'
 
 ## TypeScript Logic
 
@@ -40,8 +40,9 @@ The score will increase with every piece of food eaten. There will be a max scor
     -   [ ] Listens for clicks on the on-screen direction buttons => the snake should move in the direction of the button clicked
     -   [ ] Listens for clicks for keyboard buttons
     -   [ ] Listens for clicks on the restart button
-        -   [ ] Should restart the game, the snake should go back to its original size, and the snake and food should be placed in a random spot.
-        -   [ ] The game should start and restart in a static state.
+-   [ ] The game should start and restart in a static state.
+-   [ ] The game should start with the snake and food in a random place.
+-   [ ] Should restart the game, the snake should go back to its original size, and the snake and food should be placed in a random spot.
 -   [ ] Function that handles the increase in size of the snakes body when it consumes food
     -   [ ] Function that checks whether the food has been hit by the snake
 -   [ ] Function that updates the score when the food has been consumed
@@ -51,6 +52,7 @@ The score will increase with every piece of food eaten. There will be a max scor
 -   [ ] Possible error states
     -   [ ] The snake should start off as static. Should only begin once the user has clicked a direction button
     -   [ ] The snake and food should not start off on top of each other
+    -   [ ] The snake goes beyond the boundary of the grid box.
 
 ## List Of Features The Game Will Include
 
