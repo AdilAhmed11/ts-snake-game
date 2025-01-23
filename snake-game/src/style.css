@@ -46,3 +46,7 @@ body {
   grid-template: repeat(30, 1fr) / repeat(30, 1fr); /* Will split the grid into an equal 30x30 grid */
 
 }
+
+.play-board .food {
+  background: red;
+}
