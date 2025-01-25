@@ -2,6 +2,7 @@ import './style.css'
 
 let foodX: number, foodY: number; // Food starts at a different position each time.
 let snakeX: number = 5, snakeY: number = 5; // Snake starts at the same position each time.
+let snakeBody = [ ]; // Treat the snake body like an empty array where a 'block' is added. This can be added to the if function when the food is eaten
 let directionX: number = 0, directionY: number = 0; // Variables needed for direction change.
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
@@ -41,13 +42,28 @@ const initGame = () => {
 
     if(snakeX === foodX && snakeY === foodY) { // x and y coordinates of food and head match.
         changeFoodPosition();
+        snakeBody.push([foodX, foodY]); // Pushing food position to snake body array
+        console.log(snakeBody);
     }
+
+    for(let i = snakeBody.length -1; i > 0; i--) {
+        // The FOR LOOP shifts all segments of the snake backwards, copying the position of thh block in front of it to the current one. This effectively 'moves' the body of the snake to follow its head.
+        // snakeBody[0] is the snakes 'head'. The last element, the tail, is represented by snakeBody[snakeBody.length -1]
+        // Start at the last block of the snake, the tail; Continue until it reaches the first segment, the head'; Decrement and move backwards through the snake body array.
+        // The body of the loop takes the position of the segment in front of the current one and assigns it to teh current segment of the body.
+        snakeBody[i] = snakeBody[i - 1];
+    }
+
+    snakeBody[0] = [snakeX, snakeY]; // Setting first element of snake body to current snake position
 
     // The two lines below update the snake's head position based on the current direction.
     snakeX += directionX;
     snakeY += directionY;
-    htmlMarkup += `<div class="head" style="grid-area: ${snakeX} / ${snakeY}"></div>`;
 
+    for(let i = 0; i < snakeBody.length; i++) {
+        // Adding a div for each part of the snake's body
+        htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`; // Position of the snakes head in an array, (x and y coordinate in an array)
+    }
     gameArea.innerHTML = htmlMarkup;
 }
 
