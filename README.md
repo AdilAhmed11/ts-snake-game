@@ -28,26 +28,46 @@ The score will increase with every piece of food eaten. There will be a max scor
     -   [x] On-screen Direction buttons (up, down, left, right) in mobile mode (touch screens)
     -   [ ] Button to restart the game
 
--   [ ] Random placement of the snake
--   [ ] Random placement of the food
+-   [x] Random placement of the snake
+-   [x] Random placement of the food
 -   [x] A current score counter
 -   [x] A high score counter that remembers the high score from the session played
 -   [x] Heading with the name 'SNAKE'
 
 ## TypeScript Logic
 
--   [ ] eventListeners will need to look out for clicks
-    -   [ ] Listens for clicks on the on-screen direction buttons => the snake should move in the direction of the button clicked
-    -   [ ] Listens for clicks for keyboard buttons
-    -   [ ] Listens for clicks on the restart button
--   [ ] The game should start and restart in a static state.
--   [ ] The game should start with the snake and food in a random place.
--   [ ] Should restart the game, the snake should go back to its original size, and the snake and food should be placed in a random spot.
--   [ ] Function that handles the increase in size of the snakes body when it consumes food
+-   [x] Create the snake head
+-   [x] Create the food
+-   [x] The snake and food should start at a random position at the start of a new game - [ ] The snake and the food should not be placed on top of each other at the start of the game
+
+    <!-- an array of 900 values [x,y] coord -->
+    <!-- food - save (x,y) for that value -->
+    <!-- head -> check that random [x, y] is !== to food[x, y] if === then generate random one more time (for loop until not equal) -->
+
+-   [x] Add eventListener to look out for clicks
+
+    -   [x] Listens for clicks on the on-screen direction buttons - the snake should move in the direction of the button clicked.
+        <!-- Snake is 3 block long [[1, 2], [1, 3], [1, 4]] Moving down  [[1, 3], [1, 4], [1, 5]]-->
+        <!-- Handle special logic when at the edges of the board -->
+    -   [x] Listens for keyboard clicks
+    -   [ ] Listens for clicks on the restart button.
+
+-   [x] The game should start and restart in a static state.
+    -   [x] The snake should go back to its original size, and the snake and food should be placed in a random spot.
+-   [ ] The snake should move at a constant speed when changing directions
+    -   [x] Function that handles the change in direction
+    -   [x] Pressing the same direction button twice or more in succession should not speed up the snake
+    -   [x] Function that stops the snake from moving immediately in the opposite direction e.g., up when going down, left when going right (the snake has to move in a perpendicular direction).
+-   [ ] Only the snake's head should move and the body should follow after
+-   [ ] When the snake eats the food, its body should grow by one 'block'
+
     -   [ ] Function that checks whether the food has been hit by the snake
--   [ ] Function that updates the score when the food has been consumed
--   [ ] Function that handles the change in direction
--   [ ] Function that handles the repositioning of the food to another random position when it has been consumed.
+    -   [ ] Function that increases the size of the snakes body by one 'block' - This could be done with .push loop
+    -   [ ] The food should then re-spawn in a different random location on the grid
+    -   [ ] Function that updates the score when the food has been consumed
+    -   [ ] Function that handles the repositioning of the food to another random position when it has been consumed.
+
+-   [ ] Function to check whether the snake has hit itself or the walls that ends the game
 
 -   [ ] Possible error states
     -   [ ] The snake should start off as static. Should only begin once the user has clicked a direction button
@@ -56,9 +76,11 @@ The score will increase with every piece of food eaten. There will be a max scor
 
 ## List Of Features The Game Will Include
 
-In order of importance
+-   [ ] Movement controls: On-screen buttons for mobile mode and keyboard arrow keys for desktop
+-   [ ] Random food generation
+-   [ ] Snake growth with a score counter
 
-# Extra Tasks
+# Extra Tasks if extra time.
 
 -   [ ] Sound effects
 -   [ ] Add difficulty levels: Easy, Medium, Hard. This will be correlated to the speed the snake moves on the screen.
@@ -66,16 +88,17 @@ In order of importance
 -   [ ] Add a different mode with no walls - the snake will be able to pass through a wall and exit the opposite side.
 -   [ ] Add special effects to make it unique/distinguishable from classic 'Snake'.
     -   [ ] Feature 1?
+-   [ ] Special level where direction keys are the opposite (up is down and right is left).
 
 # MVP
 
 _Remove this section at the end of the project_
 
--   [ ] Present a simple plan of the game to one of the coaches:
+-   [x] Present a simple plan of the game to one of the coaches:
 
     -   [x] What will happen in the game in plain english
     -   [x] How you plan on building it (HTML/CSS/TS)
-    -   [ ] List of features the game will include in order of importance
+    -   [x] List of features the game will include in order of importance
 
 -   [ ] Version control
 
@@ -86,7 +109,7 @@ _Remove this section at the end of the project_
 -   [ ] Readability
 
     -   [ ] TS code to be formatted as functions
-    -   [ ] Code mush be correctly formatted using suitable indentation and variable names
+    -   [ ] Code must be correctly formatted using suitable indentation and variable names
 
 -   [ ] The Code
     -   [ ] Must be all my own. Be able to explain what everything does and it's there

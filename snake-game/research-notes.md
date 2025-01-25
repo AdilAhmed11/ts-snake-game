@@ -19,6 +19,9 @@ E.g. directionX = 1, directionY = 0. To move right.
 Give && condition to stop it going the opposite direction.
 E.g. directionX = 1, directionY = 0 && directionX !== -1. To stop it from moving left when going right.
 
+Continuous movement.
+setInterval(fn, t) repeatedly calls a function fn at the time t.
+
 ## How to increase the length of the snake?
 
 ## Collision detection with walls and body

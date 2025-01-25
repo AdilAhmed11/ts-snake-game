@@ -1,12 +1,13 @@
 import './style.css'
 
 let foodX: number, foodY: number; // Food starts at a different position each time.
-let snakeX: number = 5, snakeY: number = 10; // Snake starts at the same position each time.
+let snakeX: number = 5, snakeY: number = 5; // Snake starts at the same position each time.
 let directionX: number = 0, directionY: number = 0; // Variables needed for direction change.
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
 // Other possible constants
-// const scoreElement = document.querySelector<>(".score");
+// const scoreElement = document.querySelector<>("#score");
+// const highScoreElement = document.querySelector<>("#highScore")
 // const controlsElement = document.querySelectorAll<HTMLButtonElement>();
 
 if (!gameArea) {
@@ -32,12 +33,10 @@ const changeDirection = (press: any) => { // Creating a function to move the sna
         directionX = -1;
         directionY = 0;
     }
-    initGame();
 
 }
 
 const initGame = () => {
-
     let htmlMarkup: string = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`; // This is the variable assigned to the position of the food. It gives a random position to the food.
 
     // The two lines below update the snake's head position based on the current direction.
@@ -49,6 +48,6 @@ const initGame = () => {
 }
 
 changeFoodPosition();
-initGame();
+setInterval(initGame, 120); // setInterval() repeatedly calls a function for a given time delay. 2 parameters: function, delay.
 
 document.addEventListener("keydown", changeDirection); // Event listener for keyboard clicks on keyboard
