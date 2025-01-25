@@ -39,6 +39,10 @@ const changeDirection = (press: any) => { // Creating a function to move the sna
 const initGame = () => {
     let htmlMarkup: string = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`; // This is the variable assigned to the position of the food. It gives a random position to the food.
 
+    if(snakeX === foodX && snakeY === foodY) { // x and y coordinates of food and head match.
+        changeFoodPosition();
+    }
+
     // The two lines below update the snake's head position based on the current direction.
     snakeX += directionX;
     snakeY += directionY;

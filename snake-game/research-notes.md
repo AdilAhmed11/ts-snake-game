@@ -9,6 +9,12 @@ if(snakeHeadX === foodX && snakeHeadY === foodY) {
 return 'restart condition'
 } else;
 
+### Collision with food
+
+Need someway to know that snake 'head' and food are in the same grid position i.e. the food has been eaten.
+Need function that uses the changeFoodPosition function created at the start.
+Can i equate the x and y coordinates of both the head and food?
+
 ## Movement
 
 Event listener for keyboard clicks.
