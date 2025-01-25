@@ -6,24 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake</title>
   </head>
-  <body> <!--Tried to wrap the div in section but it didn't fill all the surrounding area-->
-    <div class="game-area">
-      <div class="title-area">
+  <body> 
+    <div class="container">
+      <div class="title-details">
         <h1>Snake</h1>
-        <h6>by Adil Ahmed</h6>
       </div>
-      <div class="score-details"> <!--Top banner with details-->
-        <span class="score">Score: 0</span>
-        <span class="high-score">High score: 0</span>
+      <div class="score-details">
+          <span class="score">Score: 15</span> <!--Why is span better than a h1 or p tag?-->
+          <span class="high-score">High Score: 18</span>
       </div>
-      <div class="play-board" id="display"></div>
-      <div class="controls">
-        <button class="controls__left">Left</button> 
-        <button class="controls__up">Up</button>
-        <button class="controls__right">Right</button>
-        <button class="controls__down">Down</button>
-        <button class="control__restart">Restart</button>
-      </div>
+      <div class="game-area"></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

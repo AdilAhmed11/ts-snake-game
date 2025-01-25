@@ -1,52 +1,53 @@
 * {
-  font-family: Arial, Helvetica, sans-serif; /* Standard font for now, will change to fit theme */
-  margin: 0; /* 0 margin to make it go all the way to the edge */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* border-box - the content shrinks to fit within the total size */
 }
+
 body {
-  display: flex; /* flex the entire body */
-  justify-content: center; /* center the content in the horizontal axis */
-  align-items: center; /* center the content in the vertical axis */
-  height: 100%; 
-  background-color: skyblue; /* Change this to an off-white colour */
-}
-
-.game-area {
-  background: blue; /* Change this to a much more appealing colour */
-  width: 500px; /* How can i change this property so it scales with the screen? */
-  height: 700px; /* Same comment as above */
   display: flex;
-  flex-direction: column;
-}
-
-.title-area {
-  color: white;
-  font-size: 1rem;
-  padding: 20px 27px;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh; /* Why use min height? Why use vh instead of standard unit */
+}
+
+.container {
+  background: darkblue;
+  width: 65vmin; /* Why use vmin? */
+  height: 70vmin;
+  display: flex;
+  flex-direction: column; /* Why column instead of inline */
+  overflow: hidden; /* What does this do? */
+  border-radius: 2px; /* Make the corners look rounded. 10 is too much */
+}
+
+.title-details {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: white;
 }
 
 .score-details {
-  color: white;
-  font-size: small;
-  padding: 10px 10px;
   display: flex;
   justify-content: space-between;
+  color: white;
+  padding: 15px 25px; 
 }
 
-.play-board {
+.game-area { 
   width: 100%;
   height: 100%;
-  background: darkblue;
   display: grid;
-  grid-template: repeat(30, 1fr) / repeat(30, 1fr); /* Will split the grid into an equal 30x30 grid */
-
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr); /* grid-template is shorthand for both row and column. It then splits it into 30 equal portions in both directions. */
+  background-color: black;
 }
 
-.play-board .food {
-  background: red;
+.game-area .food {
+  background-color: red;
+}
+
+.game-area .head {
+  background-color: green;
 }
