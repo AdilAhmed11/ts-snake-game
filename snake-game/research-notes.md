@@ -13,7 +13,7 @@ return 'restart condition'
 
 Need someway to know that snake 'head' and food are in the same grid position i.e. the food has been eaten.
 Need function that uses the changeFoodPosition function created at the start.
-Can i equate the x and y coordinates of both the head and food?
+Can i equate the x and y coordinates of both the head and food? YES I CAN!
 
 ## Movement
 
@@ -39,6 +39,8 @@ for(let i = snakeBody.length -1; i > 0; i--) {snakeBody[i] = snakeBody[i - 1];}
 3. Decrement: Move backward through the snake body array.
 4. Body of the Loop: Take the position of the segment in front of the current one (snakeBody[i - 1]) and assign it to the current segment (snakeBody[i]).
 
+Essentially this starts at the tail. If we have a 3 block snake, the tail end moves in to the second position, the second position moves into the first position (head), and the first position moves in accordance to the direction key.
+
 ### Option 2 - .unshift Statement
 
 When snake meets food, increment a loop using an unshift statement. This adds an element to the beginning of the element
@@ -46,11 +48,43 @@ When snake meets food, increment a loop using an unshift statement. This adds an
 ### Option 3 - .push
 
 When food is hit, that block can be pushed in to the array of the snake.
-Need to add a function to clear the food from the position and re-spawn it elsewhere.
+if (snakeX == foodX && snakeY == foodY) {
+snakeBody.push([foodX, foodY]) // this pushes the food into the snake body.
+placeFood();
+}
+However, this just leaves the food in its place on the map. Need to push it into the body.
+Then use decrement loop to add to the body.
 
 ## Collision detection with walls and body
 
 -   Walls
+
+if else loop.
+If the snake head touches any part of the walls, then it is gameOver.
+I have a 30x30 gride: 0 1 2 3 ...
+0
+1
+2
+3
+
+At the left wall the x is 0, at the right wall y is 30.
+At the top wall, the y is 0, at the bottom wall y is 30.
+if(snakeHeadX <= 0 || ... >= 30 || same for y){ ..}
+What about the snake moving along the wall? Will it still work?
+
 -   Body
 
+Use similar detection to food detection.
+for(let i = 0; i < snankeBody.length; i++){
+if(snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
+gameOver = true;
+gmae over function.
+}
+}
+
 ## Game over loop
+
+### QUESTIONS
+
+-   if else loop on direction change
+-   what is the .getContext("2d) about?

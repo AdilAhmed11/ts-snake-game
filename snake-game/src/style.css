@@ -9,16 +9,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Why use min height? Why use vh instead of standard unit */
+  min-height: 100vh; /* vh allows you to size elements relative to the height of the browser window. */
 }
 
 .container {
   background: darkblue;
-  width: 65vmin; /* Why use vmin? */
+  width: 65vmin; /* 65% of the viewport width. */
   height: 70vmin;
   display: flex;
-  flex-direction: column; /* Why column instead of inline */
-  overflow: hidden; /* What does this do? */
+  flex-direction: column; 
+  overflow: hidden;
   border-radius: 2px; /* Make the corners look rounded. 10 is too much */
 }
 

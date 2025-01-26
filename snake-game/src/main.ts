@@ -1,9 +1,11 @@
 import './style.css'
 
+let gameOver = false;
 let foodX: number, foodY: number; // Food starts at a different position each time.
 let snakeX: number = 5, snakeY: number = 5; // Snake starts at the same position each time.
 let snakeBody = [ ]; // Treat the snake body like an empty array where a 'block' is added. This can be added to the if function when the food is eaten
 let directionX: number = 0, directionY: number = 0; // Variables needed for direction change.
+let setIntervalId; // Needed to reset the game
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
 // Other possible constants
@@ -18,6 +20,12 @@ if (!gameArea) {
 const changeFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) +1; // Gives a random x position on the grid of 30.
     foodY = Math.floor(Math.random() * 30) +1; // The +1 shifts the range from 0-29 to 1-30 in accordance to the grid.
+}
+
+const handleGameOver = () => { // Variable for the game over. Will give an alert message.
+    clearInterval(setIntervalId); // Clears the timer as i was getting  error for game over not letting me restart without refreshing
+    alert('Game Over! Press OK to replay...');
+    location.reload(); // Reload.
 }
 
 const changeDirection = (press: any) => { // Creating a function to move the snake.
@@ -38,12 +46,13 @@ const changeDirection = (press: any) => { // Creating a function to move the sna
 }
 
 const initGame = () => {
+    if(gameOver) return handleGameOver(); // Condition for game over.
+    
     let htmlMarkup: string = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`; // This is the variable assigned to the position of the food. It gives a random position to the food.
 
     if(snakeX === foodX && snakeY === foodY) { // x and y coordinates of food and head match.
         changeFoodPosition();
         snakeBody.push([foodX, foodY]); // Pushing food position to snake body array
-        console.log(snakeBody);
     }
 
     for(let i = snakeBody.length -1; i > 0; i--) {
@@ -60,6 +69,11 @@ const initGame = () => {
     snakeX += directionX;
     snakeY += directionY;
 
+    // Checking if the snake's head is out of wall, if so setting gameOver to true.
+    if(snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) { // Conditions that go beyond the boundaries of the 30x30 grid.
+        gameOver = true; // Initial condition at the top was false, but once this condition had been met, game over is true.
+    }
+
     for(let i = 0; i < snakeBody.length; i++) {
         // Adding a div for each part of the snake's body
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`; // Position of the snakes head in an array, (x and y coordinate in an array)
@@ -68,6 +82,6 @@ const initGame = () => {
 }
 
 changeFoodPosition();
-setInterval(initGame, 120); // setInterval() repeatedly calls a function for a given time delay. 2 parameters: function, delay.
+setIntervalId = setInterval(initGame, 120); // setInterval() repeatedly calls a function for a given time delay. 2 parameters: function, delay.
 
 document.addEventListener("keydown", changeDirection); // Event listener for keyboard clicks on keyboard
