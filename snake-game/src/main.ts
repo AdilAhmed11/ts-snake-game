@@ -77,6 +77,11 @@ const initGame = () => {
     for(let i = 0; i < snakeBody.length; i++) {
         // Adding a div for each part of the snake's body
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`; // Position of the snakes head in an array, (x and y coordinate in an array)
+        // snakeBody[0][0] is the x coordinate, snakeBody[0][1] is the y coordinate
+        // the 1st comparison: compares y cordinate of head to the body. The 2nd comparison: compares the x coordinate of the head to the body.
+        if(snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0] && i !== 0) {
+            gameOver = true;
+        }
     }
     gameArea.innerHTML = htmlMarkup;
 }

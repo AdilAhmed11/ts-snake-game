@@ -58,16 +58,16 @@ The score will increase with every piece of food eaten. There will be a max scor
     -   [x] Function that handles the change in direction
     -   [x] Pressing the same direction button twice or more in succession should not speed up the snake
     -   [x] Function that stops the snake from moving immediately in the opposite direction e.g., up when going down, left when going right (the snake has to move in a perpendicular direction).
--   [ ] Only the snake's head should move and the body should follow after
--   [ ] When the snake eats the food, its body should grow by one 'block'
+-   [x] Only the snake's head should move and the body should follow after
+-   [x] When the snake eats the food, its body should grow by one 'block'
 
-    -   [ ] Function that checks whether the food has been hit by the snake
-    -   [ ] Function that increases the size of the snakes body by one 'block' - This could be done with .push loop
-    -   [ ] The food should then re-spawn in a different random location on the grid
+    -   [x] Function that checks whether the food has been hit by the snake
+    -   [x] Function that increases the size of the snakes body by one 'block' - This could be done with .push loop
+    -   [x] The food should then re-spawn in a different random location on the grid
     -   [ ] Function that updates the score when the food has been consumed
-    -   [ ] Function that handles the repositioning of the food to another random position when it has been consumed.
+    -   [x] Function that handles the repositioning of the food to another random position when it has been consumed.
 
--   [ ] Function to check whether the snake has hit itself or the walls that ends the game
+-   [x] Function to check whether the snake has hit itself or the walls that ends the game
 
 -   [ ] Possible error states
     -   [ ] The snake should start off as static. Should only begin once the user has clicked a direction button
@@ -77,7 +77,7 @@ The score will increase with every piece of food eaten. There will be a max scor
 ## List Of Features The Game Will Include
 
 -   [ ] Movement controls: On-screen buttons for mobile mode and keyboard arrow keys for desktop
--   [ ] Random food generation
+-   [x] Random food generation
 -   [ ] Snake growth with a score counter
 
 # Extra Tasks if extra time.
