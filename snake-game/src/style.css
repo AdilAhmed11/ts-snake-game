@@ -67,6 +67,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px;
+  display: none;
 }
 
 .controls button {
@@ -82,21 +83,28 @@ body {
 }
 
 .controls button:active {
-  background-color: #388e3c;
-  /* Darker green on click */
-  box-shadow: 0 2px #19551d;
+  background-color: green;
+  box-shadow: 0 2px darkgreen;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   .container {
     width: 80vmin;
-    height: 115vmin;
+    height: 100vmin;
   }
+
   .title-details {
     font-size: 0.9rem;
     padding: 15px 25px;
   }
+
   .score-details {
     font-size: 0.9rem;
+  }
+
+  /* Show direction buttons on small screens */
+  .controls {
+    display: grid;
+    /* Display the controls */
   }
 }
