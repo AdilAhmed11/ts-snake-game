@@ -10,13 +10,16 @@ let score: number = 0;
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
 const scoreElement = document.querySelector<HTMLSpanElement>("#score");
-// const controlsElement = document.querySelectorAll<HTMLButtonElement>(".direction-buttons i");
+const upButton = document.getElementById<HTMLButtonElement>('up');
+const downButton = document.getElementById<HTMLButtonElement>('down');
+const leftButton = document.getElementById<HTMLButtonElement>('left');
+const rightButton = document.getElementById<HTMLButtonElement>('right');
 
 // Other possible constants
 // const highScoreElement = document.querySelector<>("#highScore")
 
 
-if (!gameArea || !scoreElement) {
+if (!gameArea || !scoreElement || !upButton || !downButton || !leftButton || !rightButton) {
     throw new Error('Some elements can not be found');
 }
 
@@ -32,22 +35,30 @@ const handleGameOver = () => { // Variable for the game over. Will give an alert
     location.reload(); // Reload.
 }
 
-const changeDirection = (press: any) => { // Creating a function to move the snake.
-    if(press.key === "ArrowUp" && directionY !== 1) { // key represents the keyboard press
-        directionX = 0; // 0 because I don't want any movement in this direction.
-        directionY = -1; // -1 because the grid increases in number in the direction of top to bottom.
-    } else if(press.key === "ArrowDown" && directionY !== -1) {
-        directionX = 0;
-        directionY = 1;
-    } else if(press.key === "ArrowRight" && directionX !== -1) {
-        directionX = 1; // Positive 1 because grid increases in the direction of left to right.
-        directionY = 0; // 0 because i don't want any movement in this direction.
-    } else if(press.key === "ArrowLeft" && directionX !== 1) { // Why doesn't the 'else' statement work here?
-        directionX = -1;
-        directionY = 0;
+const changeDirection = (input: any) => { // Creating a function to move the snake.
+  const key = input.key || input.target.id; // Handle both keyboard input and button clicks
+  if (key === 'ArrowUp' || key === 'up') {
+    if (directionY !== 1) {
+      directionX = 0; // 0 because I don't want any movement in this direction.
+      directionY = -1; // -1 because the grid increases in number in the direction of top to bottom.
     }
-
-}
+  } else if (key === 'ArrowDown' || key === 'down') {
+    if (directionY !== -1) {
+      directionX = 0;
+      directionY = 1;
+    }
+  } else if (key === 'ArrowLeft' || key === 'left') {
+    if (directionX !== 1) {
+      directionX = -1;
+      directionY = 0;
+    }
+  } else if (key === 'ArrowRight' || key === 'right') {
+    if (directionX !== -1) {
+      directionX = 1; // Positive 1 because grid increases in the direction of left to right.
+      directionY = 0; // 0 because i don't want any movement in this direction.
+    }
+  }
+};
 
 const initGame = () => {
     if(gameOver) return handleGameOver(); // Condition for game over.
@@ -98,3 +109,7 @@ setIntervalId = setInterval(initGame, 120); // setInterval() repeatedly calls a 
 
 document.addEventListener("keydown", changeDirection); // Event listener for keyboard clicks on keyboard
 
+upButton.addEventListener('click', changeDirection);
+downButton.addEventListener('click', changeDirection);
+leftButton.addEventListener('click', changeDirection);
+rightButton.addEventListener('click', changeDirection);
