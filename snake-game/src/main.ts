@@ -10,11 +10,13 @@ let score: number = 0;
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
 const scoreElement = document.querySelector<HTMLSpanElement>("#score");
+// const controlsElement = document.querySelectorAll<HTMLButtonElement>(".direction-buttons i");
+
 // Other possible constants
 // const highScoreElement = document.querySelector<>("#highScore")
-// const controlsElement = document.querySelectorAll<HTMLButtonElement>();
 
-if (!gameArea) {
+
+if (!gameArea || !scoreElement) {
     throw new Error('Some elements can not be found');
 }
 
@@ -95,3 +97,4 @@ changeFoodPosition();
 setIntervalId = setInterval(initGame, 120); // setInterval() repeatedly calls a function for a given time delay. 2 parameters: function, delay.
 
 document.addEventListener("keydown", changeDirection); // Event listener for keyboard clicks on keyboard
+

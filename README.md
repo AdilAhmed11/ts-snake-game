@@ -20,7 +20,7 @@ The score will increase with every piece of food eaten. There will be a max scor
 
 -   [x] A square display of a fixed size for onscreen elements (snake & food)
 
-    -   [ ] The square display and elements need to grow in proportion when moving from mobile to desktop.
+    -   [x] The square display and elements need to grow in proportion when moving from mobile to desktop.
     -   [ ] The display will have a grid as a background for the snake to move around. Will be visible.
 
 -   [ ] A set of buttons
@@ -54,7 +54,7 @@ The score will increase with every piece of food eaten. There will be a max scor
 
 -   [x] The game should start and restart in a static state.
     -   [x] The snake should go back to its original size, and the snake and food should be placed in a random spot.
--   [ ] The snake should move at a constant speed when changing directions
+-   [x] The snake should move at a constant speed when changing directions
     -   [x] Function that handles the change in direction
     -   [x] Pressing the same direction button twice or more in succession should not speed up the snake
     -   [x] Function that stops the snake from moving immediately in the opposite direction e.g., up when going down, left when going right (the snake has to move in a perpendicular direction).
@@ -64,21 +64,21 @@ The score will increase with every piece of food eaten. There will be a max scor
     -   [x] Function that checks whether the food has been hit by the snake
     -   [x] Function that increases the size of the snakes body by one 'block' - This could be done with .push loop
     -   [x] The food should then re-spawn in a different random location on the grid
-    -   [ ] Function that updates the score when the food has been consumed
+    -   [x] Function that updates the score when the food has been consumed
     -   [x] Function that handles the repositioning of the food to another random position when it has been consumed.
 
 -   [x] Function to check whether the snake has hit itself or the walls that ends the game
 
 -   [ ] Possible error states
-    -   [ ] The snake should start off as static. Should only begin once the user has clicked a direction button
+    -   [x] The snake should start off as static. Should only begin once the user has clicked a direction button
     -   [ ] The snake and food should not start off on top of each other
-    -   [ ] The snake goes beyond the boundary of the grid box.
+    -   [x] The snake goes beyond the boundary of the grid box.
 
 ## List Of Features The Game Will Include
 
 -   [ ] Movement controls: On-screen buttons for mobile mode and keyboard arrow keys for desktop
 -   [x] Random food generation
--   [ ] Snake growth with a score counter
+-   [x] Snake growth with a score counter
 
 # Extra Tasks if extra time.
 
@@ -100,18 +100,18 @@ _Remove this section at the end of the project_
     -   [x] How you plan on building it (HTML/CSS/TS)
     -   [x] List of features the game will include in order of importance
 
--   [ ] Version control
+-   [x] Version control
 
     -   [x] Public repository on GitHub
     -   [x] Have a README file with a short intro
-    -   [ ] Have at least 15 meaningful Git commits
+    -   [x] Have at least 15 meaningful Git commits
 
--   [ ] Readability
+-   [x] Readability
 
-    -   [ ] TS code to be formatted as functions
-    -   [ ] Code must be correctly formatted using suitable indentation and variable names
+    -   [x] TS code to be formatted as functions
+    -   [x] Code must be correctly formatted using suitable indentation and variable names
 
--   [ ] The Code
-    -   [ ] Must be all my own. Be able to explain what everything does and it's there
-    -   [ ] Click or keypress to trigger the events of the game (no refreshing to restart the game)
-    -   [ ] Mobile-first approach to the implementation. It needs to work on different device widths
+-   [x] The Code
+    -   [x] Must be all my own. Be able to explain what everything does and it's there
+    -   [x] Click or keypress to trigger the events of the game (no refreshing to restart the game)
+    -   [x] Mobile-first approach to the implementation. It needs to work on different device widths

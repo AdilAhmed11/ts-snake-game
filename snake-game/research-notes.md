@@ -87,7 +87,8 @@ game over function.
 When the snake hits the food the score should increase.
 Need a variable declared at the top for the score and that should equal 0. USE JS/TS challenges.
 Need to put a line in the function where the snake hits the food, e.g., score += score; ????
-Why isn't it updating on the actual score board???????????
+Why isn't it updating on the actual score board??????????? scoreElement queryselector. I'm such an idiot.
+use the same trick with the snake for updating score - innertext HTML
 
 ### QUESTIONS
 
