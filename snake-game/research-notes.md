@@ -55,7 +55,7 @@ placeFood();
 However, this just leaves the food in its place on the map. Need to push it into the body.
 Then use decrement loop to add to the body.
 
-## Collision detection with walls and body
+## Collision detection with walls and body - Game over loop
 
 -   Walls
 
@@ -78,11 +78,16 @@ Use similar detection to food detection.
 for(let i = 0; i < snankeBody.length; i++){
 if(snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
 gameOver = true;
-gmae over function.
+game over function.
 }
 }
 
-## Game over loop
+## Score counter
+
+When the snake hits the food the score should increase.
+Need a variable declared at the top for the score and that should equal 0. USE JS/TS challenges.
+Need to put a line in the function where the snake hits the food, e.g., score += score; ????
+Why isn't it updating on the actual score board???????????
 
 ### QUESTIONS
 

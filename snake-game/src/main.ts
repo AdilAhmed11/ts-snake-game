@@ -5,11 +5,12 @@ let foodX: number, foodY: number; // Food starts at a different position each ti
 let snakeX: number = 5, snakeY: number = 5; // Snake starts at the same position each time.
 let snakeBody = [ ]; // Treat the snake body like an empty array where a 'block' is added. This can be added to the if function when the food is eaten
 let directionX: number = 0, directionY: number = 0; // Variables needed for direction change.
-let setIntervalId; // Needed to reset the game
+let setIntervalId: number | undefined; // Needed to reset the game
+let score: number = 0;
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
+const scoreElement = document.querySelector<HTMLSpanElement>("#score");
 // Other possible constants
-// const scoreElement = document.querySelector<>("#score");
 // const highScoreElement = document.querySelector<>("#highScore")
 // const controlsElement = document.querySelectorAll<HTMLButtonElement>();
 
@@ -20,6 +21,7 @@ if (!gameArea) {
 const changeFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) +1; // Gives a random x position on the grid of 30.
     foodY = Math.floor(Math.random() * 30) +1; // The +1 shifts the range from 0-29 to 1-30 in accordance to the grid.
+    
 }
 
 const handleGameOver = () => { // Variable for the game over. Will give an alert message.
@@ -53,6 +55,9 @@ const initGame = () => {
     if(snakeX === foodX && snakeY === foodY) { // x and y coordinates of food and head match.
         changeFoodPosition();
         snakeBody.push([foodX, foodY]); // Pushing food position to snake body array
+        score += 1;
+
+        scoreElement.innerText = `Score: ${score}`;
     }
 
     for(let i = snakeBody.length -1; i > 0; i--) {
