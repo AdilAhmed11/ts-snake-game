@@ -14,14 +14,16 @@ const upButton = document.getElementById<HTMLButtonElement>('up');
 const downButton = document.getElementById<HTMLButtonElement>('down');
 const leftButton = document.getElementById<HTMLButtonElement>('left');
 const rightButton = document.getElementById<HTMLButtonElement>('right');
+const restartButton = document.getElementById<HTMLButtonElement>('restart');
 
 // Other possible constants
 // const highScoreElement = document.querySelector<>("#highScore")
 
 
-if (!gameArea || !scoreElement || !upButton || !downButton || !leftButton || !rightButton) {
+if (!gameArea || !scoreElement || !upButton || !downButton || !leftButton || !rightButton || !restartButton) {
     throw new Error('Some elements can not be found');
 }
+
 
 const changeFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) +1; // Gives a random x position on the grid of 30.
@@ -58,6 +60,20 @@ const changeDirection = (input: any) => { // Creating a function to move the sna
       directionY = 0; // 0 because i don't want any movement in this direction.
     }
   }
+};
+
+const resetGame = () => {
+  clearInterval(setIntervalId); // Stop the game loop
+  gameOver = false; // Reset game-over state
+  snakeX = 5;
+  snakeY = 5;
+  snakeBody = []; // Clear the snake body
+  directionX = 0;
+  directionY = 0;
+  score = 0; // Reset score
+  scoreElement.innerText = `Score: ${score}`; // Update score display
+  changeFoodPosition(); // Reset food position
+  setIntervalId = setInterval(initGame, 120); // Restart the game loop
 };
 
 const initGame = () => {
@@ -113,3 +129,4 @@ upButton.addEventListener('click', changeDirection);
 downButton.addEventListener('click', changeDirection);
 leftButton.addEventListener('click', changeDirection);
 rightButton.addEventListener('click', changeDirection);
+restartButton.addEventListener('click', resetGame);

@@ -23,10 +23,10 @@ The score will increase with every piece of food eaten. There will be a max scor
     -   [x] The square display and elements need to grow in proportion when moving from mobile to desktop.
     -   [ ] The display will have a grid as a background for the snake to move around. Will be visible.
 
--   [ ] A set of buttons
+-   [x] A set of buttons
 
     -   [x] On-screen Direction buttons (up, down, left, right) in mobile mode (touch screens)
-    -   [ ] Button to restart the game
+    -   [x] Button to restart the game
 
 -   [x] Random placement of the snake
 -   [x] Random placement of the food
@@ -50,7 +50,7 @@ The score will increase with every piece of food eaten. There will be a max scor
         <!-- Snake is 3 block long [[1, 2], [1, 3], [1, 4]] Moving down  [[1, 3], [1, 4], [1, 5]]-->
         <!-- Handle special logic when at the edges of the board -->
     -   [x] Listens for keyboard clicks
-    -   [ ] Listens for clicks on the restart button.
+    -   [x] Listens for clicks on the restart button.
 
 -   [x] The game should start and restart in a static state.
     -   [x] The snake should go back to its original size, and the snake and food should be placed in a random spot.
@@ -76,7 +76,7 @@ The score will increase with every piece of food eaten. There will be a max scor
 
 ## List Of Features The Game Will Include
 
--   [ ] Movement controls: On-screen buttons for mobile mode and keyboard arrow keys for desktop
+-   [x] Movement controls: On-screen buttons for mobile mode and keyboard arrow keys for desktop
 -   [x] Random food generation
 -   [x] Snake growth with a score counter
 

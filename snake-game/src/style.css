@@ -87,6 +87,25 @@ body {
   box-shadow: 0 2px darkgreen;
 }
 
+.restart-btn {
+  margin: 10px auto;
+  /* Center the button */
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px darkred;
+  text-align: center;
+}
+
+.restart-btn:active {
+  background-color: darkred;
+  box-shadow: 0 2px darkred;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     width: 80vmin;
