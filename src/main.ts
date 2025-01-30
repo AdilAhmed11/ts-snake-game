@@ -3,18 +3,18 @@ import './style.css'
 let gameOver = false;
 let foodX: number, foodY: number; // Food starts at a different position each time.
 let snakeX: number = 5, snakeY: number = 5; // Snake starts at the same position each time.
-let snakeBody = [ ]; // Treat the snake body like an empty array where a 'block' is added. This can be added to the if function when the food is eaten
+let snakeBody: Array<any> = [ ]; // Treat the snake body like an empty array where a 'block' is added. This can be added to the if function when the food is eaten
 let directionX: number = 0, directionY: number = 0; // Variables needed for direction change.
 let setIntervalId: number | undefined; // Needed to reset the game
 let score: number = 0;
 
 const gameArea = document.querySelector<HTMLDivElement>(".game-area");
 const scoreElement = document.querySelector<HTMLSpanElement>("#score");
-const upButton = document.getElementById<HTMLButtonElement>('up');
-const downButton = document.getElementById<HTMLButtonElement>('down');
-const leftButton = document.getElementById<HTMLButtonElement>('left');
-const rightButton = document.getElementById<HTMLButtonElement>('right');
-const restartButton = document.getElementById<HTMLButtonElement>('restart');
+const upButton = document.getElementById('up') as HTMLButtonElement;
+const downButton = document.getElementById('down') as HTMLButtonElement;
+const leftButton = document.getElementById('left') as HTMLButtonElement;
+const rightButton = document.getElementById('right') as HTMLButtonElement;
+const restartButton = document.getElementById('restart') as HTMLButtonElement;
 
 // Other possible constants
 // const highScoreElement = document.querySelector<>("#highScore")
