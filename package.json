@@ -2,7 +2,7 @@
   "name": "game-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://AdilAhmed11.github.io/game-project/",
+  "homepage": "https://AdilAhmed11.github.io/ts-snake-game/",
   "type": "module",
   "scripts": {
     "dev": "vite",
